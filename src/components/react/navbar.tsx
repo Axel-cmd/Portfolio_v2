@@ -195,16 +195,11 @@ const Navbar = () => {
               >
                 <div className="flex flex-wrap items-center justify-center gap-x-2 text-center">
                   <span className="text-muted-foreground text-sm" aria-label="copyright">
-                    2020 - {new Date().getFullYear()} &copy; All rights reserved.
+                    {new Date().getFullYear()} &copy; All rights reserved.
                   </span>
                   <Separator orientation="vertical" className="hidden h-4! sm:block" />
                   <p className="text-muted-foreground text-sm" aria-label="open-source description">
-                    <Link
-                      href="https://github.com/cojocaru-david/portfolio"
-                      class="text-foreground"
-                      external
-                      underline>Open-source</Link
-                    > under MIT license
+                    Made with ❤️ by <Link href="https://github.com/axel-cmd" class="text-foreground" external underline>Axel Minart</Link>
                   </p>
                 </div>
               </motion.div>
