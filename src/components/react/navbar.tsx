@@ -5,7 +5,6 @@ import ThemeToggle from './theme-toggle'
 import { NAV_LINKS, SITE } from '../../consts'
 import { cn } from '@/lib/utils'
 import debounce from 'lodash.debounce'
-import Logo from '../ui/logo'
 import { Button } from '@/components/ui/button'
 import { Menu, X } from 'lucide-react'
 import { Separator } from '../ui/separator'
@@ -107,21 +106,8 @@ const Navbar = () => {
           isMobile && 'border-0'
         )}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 p-4">
-          <Link
-            href="/"
-            className="font-custom flex shrink-0 items-center gap-2 text-xl font-bold"
-            aria-label="Home"
-            title="Home"
-          >
-            <Logo className="h-8 w-8" />
-            <span className={
-              'transition-opacity duration-200 ease-in-out text-foreground/90 dark:text-white'}>
-              {SITE.title}
-            </span>
-          </Link>
-
-          <div className="flex items-center gap-2 md:gap-4">
+        <div className="mx-auto flex max-w-7xl w-full items-center justify-end gap-4 p-4 md:justify-center">
+          <div className="flex items-center gap-2 md:gap-6">
             <nav className="hidden items-center gap-6 md:flex" aria-label="Main navigation">
               {NAV_LINKS.map((item) => {
                 const isActive = activePath.startsWith(item.href) && item.href !== "/";
