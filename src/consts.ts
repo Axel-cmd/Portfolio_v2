@@ -4,7 +4,7 @@ export const SITE: Site = {
   title: 'Axel Minart',
   description:
     "Junior Full Stack Developer specializing in modern web technologies. Expert in React, Node.js, TypeScript, and cloud development. Read my latest tech tutorials, project insights, and programming tips on web development, DevOps, and software engineering best practices.",
-  href: 'https://www.cojocarudavid.me',
+  href: 'https://www.axelminart.com',
   author: 'Axel Minart',
   locale: 'en-US',
   location: 'France',
@@ -28,20 +28,16 @@ export const NAV_LINKS: SocialLink[] = [
 
 export const SOCIAL_LINKS: SocialLink[] = [
   {
-    href: 'https://github.com/cojocaru-david?ref=personal-website',
+    href: 'https://github.com/axel-cmd',
     label: 'GitHub',
   },
   {
-    href: 'mailto:contact@cojocarudavid.me',
+    href: 'https://www.linkedin.com/in/axel-minart',
+    label: 'LinkedIn',
+  },
+  {
+    href: 'mailto:axelminart.pro@gmail.com',
     label: 'Email',
-  },
-  {
-    href: 'tel:+40764132266',
-    label: 'Phone',
-  },
-  {
-    href: 'https://www.instagram.com/david._.cojo?ref=personal-website',
-    label: 'Instagram',
   },
   {
     href: '/rss.xml',
@@ -52,10 +48,9 @@ export const SOCIAL_LINKS: SocialLink[] = [
 export const ICON_MAP: IconMap = {
   Website: 'lucide:globe',
   GitHub: 'lucide:github',
-  Instagram: 'lucide:instagram',
-  Phone: 'lucide:phone',
   Email: 'lucide:mail',
   RSS: 'lucide:rss',
+  LinkedIn: 'lucide:linkedin',
 }
 
 export interface Category {
@@ -70,7 +65,7 @@ export type Technologies = {
   'Operating Systems': Category[]
   'Other Programming Languages and Technologies': Category[]
   'Web Servers': Category[]
-  Databases: Category[]
+  'Databases': Category[]
   'Other Software': Category[]
 }
 
@@ -105,7 +100,7 @@ export const technologies: Technologies = {
     { text: 'Apache', logo: 'cib:apache' },
     { text: 'Nginx', logo: 'cib:nginx' },
   ],
-  Databases: [
+  'Databases': [
     { text: 'MySQL', logo: 'cib:mysql' },
     { text: 'MongoDB', logo: 'cib:mongodb' },
   ],
