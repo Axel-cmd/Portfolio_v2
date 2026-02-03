@@ -72,33 +72,34 @@ export type Technologies = {
 export const technologies: Technologies = {
   'Web Development': [
     { text: 'HTML', logo: 'mdi:language-html5' },
-    { text: 'JavaScript', logo: 'mdi:language-javascript' },
+    { text: 'TypeScript', logo: 'simple-icons:typescript' },
     { text: 'CSS', logo: 'mdi:language-css3' },
-    { text: 'PHP', logo: 'mdi:language-php' },
+    { text: 'Angular', logo: 'cib:angular' },
     { text: 'Astro', logo: 'simple-icons:astro' },
     { text: 'Tailwind CSS', logo: 'mdi:tailwind' },
   ],
   'Development Tools': [
     { text: 'Visual Studio Code', logo: 'mdi:visual-studio-code' },
     { text: 'Git', logo: 'mdi:git' },
+    { text: 'GitLab', logo: 'simple-icons:gitlab' },
   ],
   'Hosting and Cloud Services': [
-    { text: 'DigitalOcean', logo: 'mdi:digital-ocean' },
-    { text: 'Cloudflare', logo: 'cib:cloudflare' },
-    { text: 'Netlify', logo: 'cib:netlify' },
+    { text: 'Hostinger', logo: 'simple-icons:hostinger' },
   ],
   'Operating Systems': [
     { text: 'Windows', logo: 'mdi:windows' },
-    { text: 'Ubuntu', logo: 'mdi:ubuntu' },
+    { text: 'Debian', logo: 'simple-icons:debian' },
   ],
   'Other Programming Languages and Technologies': [
-    { text: 'Lua', logo: 'mdi:language-lua' },
+    { text: 'C#', logo: 'simple-icons:csharp' },
     { text: 'Golang', logo: 'mdi:language-go' },
     { text: 'Node.js', logo: 'mdi:nodejs' },
+    { text: 'Python', logo: 'simple-icons:python' },
   ],
   'Web Servers': [
     { text: 'Apache', logo: 'cib:apache' },
     { text: 'Nginx', logo: 'cib:nginx' },
+    { text: 'IIS', logo: 'mdi:server' },
   ],
   'Databases': [
     { text: 'MySQL', logo: 'cib:mysql' },
@@ -107,7 +108,6 @@ export const technologies: Technologies = {
   'Other Software': [
     { text: 'Discord', logo: 'mdi:discord' },
     { text: 'Spotify', logo: 'mdi:spotify' },
-    { text: 'Visual Studio', logo: 'mdi:visual-studio' },
-    { text: 'Brave', logo: 'cib:brave' },
+    { text: 'Visual Studio', logo: 'simple-icons:visualstudio' },
   ],
 }
