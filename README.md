@@ -1,0 +1,1 @@
+look at the following project to implement i18n with astro : https://github.com/psephopaiktes/astro-i18n-starter
