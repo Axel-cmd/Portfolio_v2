@@ -117,7 +117,7 @@ export const experiences: Experience[] = [
     jobTitle: 'R&D Engineer',
     company: 'ALCEA - ASSA ABLOY Group',
     dateStart: 'Oct 2024',
-    dateEnd: 'present',
+    dateEnd: 'Present',
     logo: '/logos/example.svg',
   },
   {

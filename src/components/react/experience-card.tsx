@@ -1,35 +1,23 @@
 import type { Experience } from "@/types";
+import { FaQuestionCircle } from "react-icons/fa";
 
 // voir le code utilisé pour le composant experience en card : https://ryan.prebuiltui.com/
 const ExperienceCardJSX = ({ experience }: { experience: Experience }) => {
     return (
-        <div className="hover:bg-secondary/50 rounded-xl border p-4 transition-colors duration-300 ease-in-out">
-
-            <div
-            className="bg-muted flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-lg p-2"
-            aria-hidden="true"
-            >
-            <img
-                src={experience.logo}
-                alt=""
-                width="40"
-                height="40"
-                className="h-10 w-10 object-contain"
-            />
-            </div>
-            <div className="min-w-0 flex-1">
-            <h3 className="text-foreground font-semibold">{experience.jobTitle}</h3>
-            <p className="text-muted-foreground text-sm">{experience.company}</p>
-            <p className="text-muted-foreground mt-1 text-sm">
-                {experience.dateStart} - {experience.dateEnd}
-            </p>
+        <div className="w-full border p-6 rounded-xl">
+            <div className="flex flex-col md:flex-row items-start gap-3 md:items-center justify-between w-full text-gray-500">
+                <div className="flex flex-col md:flex-row items-start md:items-center gap-3">
+                    <div>
+                        {/* ajout de l'image ici */}
+                    </div>
+                    <div>
+                        <h3 className="text-base font-medium text-gray-800">{experience.jobTitle}</h3>
+                        <div>{experience.company}</div>
+                    </div>
+                </div>
+                <div>{experience.dateStart} - {experience.dateEnd}</div>
             </div>
         </div>
-        // <article
-        //     className="border-border bg-card flex flex-col gap-3 rounded-lg border p-4 shadow-sm sm:flex-row sm:items-center sm:gap-4"
-        //     aria-label={`${experience.jobTitle} at ${experience.company}`}
-        // >
-        // </article>
     )
 }
 
