@@ -118,28 +118,27 @@ export const experiences: Experience[] = [
     company: 'ALCEA - ASSA ABLOY Group',
     dateStart: 'Oct 2024',
     dateEnd: 'Present',
-    logo: '/logos/example.svg',
+    logo: '/static/alcea_assa_abloy_logo.jpg',
   },
   {
     jobTitle: 'R&D Engineer, Apprenticeship',
     company: 'ALCEA - ASSA ABLOY Group',
     dateStart: 'Sept 2021',
     dateEnd: 'Sept 2024',
-    logo: '/logos/example.svg',
+    logo: '/static/alcea_assa_abloy_logo.jpg',
   },
   {
     jobTitle: 'R&D Engineer, Internship',
     company: 'ALCEA - ASSA ABLOY Group',
     dateStart: 'Jun 2021',
     dateEnd: 'Sept 2021',
-    logo: '/logos/example.svg',
+    logo: '/static/alcea_assa_abloy_logo.jpg',
   },
   {
     jobTitle: 'Order Picker',
     company: 'DELANCHY PRESTATIONS DE SERVICES 91 - DPS 91',
     dateStart: 'Sep 2019',
     dateEnd: 'Sep 2019',
-    logo: '/logos/example.svg',
+    logo: '/static/delanchy.webp',
   }
-  // Add more experiences here
 ]
