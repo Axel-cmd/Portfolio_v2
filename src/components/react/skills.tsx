@@ -4,6 +4,7 @@ import { InfiniteScroll } from '../ui/infinite-scroll'
 import { type IconType } from 'react-icons'
 import { FaQuestionCircle } from 'react-icons/fa'
 import {
+  SiAngular,
   SiHtml5,
   SiTypescript,
   SiCss3,
@@ -32,6 +33,7 @@ const iconMap: { [key: string]: IconType } = {
   'mdi:language-html5': SiHtml5,
   'simple-icons:typescript': SiTypescript,
   'mdi:language-css3': SiCss3,
+  'simple-icons:angular': SiAngular,
   'mdi:language-php': SiPhp,
   'simple-icons:astro': SiAstro,
   'mdi:tailwind': SiTailwindcss,

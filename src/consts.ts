@@ -74,7 +74,7 @@ export const technologies: Technologies = {
     { text: 'HTML', logo: 'mdi:language-html5' },
     { text: 'TypeScript', logo: 'simple-icons:typescript' },
     { text: 'CSS', logo: 'mdi:language-css3' },
-    { text: 'Angular', logo: 'cib:angular' },
+    { text: 'Angular', logo: 'simple-icons:angular' },
     { text: 'Astro', logo: 'simple-icons:astro' },
     { text: 'Tailwind CSS', logo: 'mdi:tailwind' },
   ],

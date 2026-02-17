@@ -7,7 +7,6 @@ const ExperienceCardJSX = ({ experience }: { experience: Experience }) => {
             <div className="flex flex-col md:flex-row items-start gap-3 md:items-center justify-between w-full text-gray-500">
                 <div className="flex flex-col md:flex-row items-start md:items-center gap-3">
                     <div className="bg-gray-50 border border-gray-200 rounded-lg p-3">
-                        {/* ajout de l'image ici */}
                         <img alt="Sr. Software engineer"
                         loading="lazy" width="25" height="25" decoding="async" data-nimg="1" style={{color:"transparent"}}
                         src={experience.logo}></img>
