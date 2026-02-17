@@ -13,11 +13,11 @@ const ExperienceCardJSX = ({ experience }: { experience: Experience }) => {
                         src={experience.logo}></img>
                     </div>
                     <div>
-                        <h3 className="text-base font-medium text-gray-800">{experience.jobTitle}</h3>
-                        <div>{experience.company}</div>
+                        <h3 className="text-base font-medium text-foreground">{experience.jobTitle}</h3>
+                        <div className="text-muted-foreground" >{experience.company}</div>
                     </div>
                 </div>
-                <div>{experience.dateStart} - {experience.dateEnd}</div>
+                <div className="text-muted-foreground text-sm">{experience.dateStart} - {experience.dateEnd}</div>
             </div>
             <ul className="list-disc px-5 mt-6 text-gray-500 space-y-2">
 
