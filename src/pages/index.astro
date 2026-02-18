@@ -2,11 +2,12 @@
 import Link from '@/components/Link.astro'
 import PageHead from '@/components/PageHead.astro'
 import BlogCard from '@/components/react/blog-card'
+import ExperienceCard from '@/components/react/experience-card'
 import Skills from '@/components/react/skills'
 import { buttonVariants } from '@/components/ui/button'
 import Layout from '@/layouts/Layout.astro'
 import { getRecentPosts } from '@/lib/data-utils'
-import { SITE } from '@/consts'
+import { SITE, experiences } from '@/consts'
 
 const blog = await getRecentPosts(3)
 const currentUrl = Astro.url;
@@ -112,5 +113,29 @@ const currentUrl = Astro.url;
         </Link>
       </div>
     </section>
+
+    <section class="flex flex-col gap-y-4" aria-labelledby="experiences-title">
+      <div class="relative" aria-labelledby="experiences-title">
+        <h2
+          id="experiences-title"
+          class="font-custom text-foreground text-2xl font-bold"
+          title="experiences"
+          aria-label="experiences"
+        >
+          Experiences
+        </h2>
+        <p class="text-muted-foreground text-sm" aria-label="experiences description">
+          Here are some of my experiences.
+        </p>
+      </div>
+      <ul class="flex flex-col gap-y-4">
+        {experiences.map((exp) => (
+          <li>
+            <ExperienceCard experience={exp} />
+          </li>
+        ))}
+      </ul>
+    </section>
+
   </section>
 </Layout>
