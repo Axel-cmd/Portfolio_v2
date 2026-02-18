@@ -1,4 +1,4 @@
-import type { IconMap, SocialLink, Site } from '@/types'
+import type { Experience, IconMap, SocialLink, Site } from '@/types'
 
 export const SITE: Site = {
   title: 'Axel Minart',
@@ -111,3 +111,35 @@ export const technologies: Technologies = {
     { text: 'Visual Studio', logo: 'simple-icons:visualstudio' },
   ],
 }
+
+export const experiences: Experience[] = [
+  {
+    jobTitle: 'R&D Engineer',
+    company: 'ALCEA - ASSA ABLOY Group',
+    dateStart: 'Oct 2024',
+    dateEnd: 'present',
+    logo: '/logos/example.svg',
+  },
+  {
+    jobTitle: 'R&D Engineer, Apprenticeship',
+    company: 'ALCEA - ASSA ABLOY Group',
+    dateStart: 'Sept 2021',
+    dateEnd: 'Sept 2024',
+    logo: '/logos/example.svg',
+  },
+  {
+    jobTitle: 'R&D Engineer, Internship',
+    company: 'ALCEA - ASSA ABLOY Group',
+    dateStart: 'Jun 2021',
+    dateEnd: 'Sept 2021',
+    logo: '/logos/example.svg',
+  },
+  {
+    jobTitle: 'Order Picker',
+    company: 'DELANCHY PRESTATIONS DE SERVICES 91 - DPS 91',
+    dateStart: 'Sep 2019',
+    dateEnd: 'Sep 2019',
+    logo: '/logos/example.svg',
+  }
+  // Add more experiences here
+]
