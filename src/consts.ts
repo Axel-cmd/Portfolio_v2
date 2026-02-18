@@ -3,7 +3,7 @@ import type { IconMap, SocialLink, Site } from '@/types'
 export const SITE: Site = {
   title: 'Axel Minart',
   description:
-    "Junior Full Stack Developer specializing in modern web technologies. Expert in React, Node.js, TypeScript, and cloud development. Read my latest tech tutorials, project insights, and programming tips on web development, DevOps, and software engineering best practices.",
+    "Software Engineer full stack specializing in modern web technologies. Expert in Angular, Node.js, TypeScript, and WebGL development with Babylon.js. Explore my latest blog posts, project insights, and programming tips. What drives me every day: taking on new projects and challenges in this dynamic and demanding sector!",
   href: 'https://www.axelminart.com',
   author: 'Axel Minart',
   locale: 'en-US',
