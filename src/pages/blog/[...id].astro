@@ -12,7 +12,7 @@ import { getAdjacentPosts, getAllPosts } from '@/lib/data-utils'
 import { formatDate, readingTime } from '@/lib/utils'
 import { Icon } from 'astro-icon/components'
 import { render } from 'astro:content'
-import LikePost from '@/components/LikePost.astro'
+// import LikePost from '@/components/LikePost.astro'
 
 export async function getStaticPaths() {
   const posts = await getAllPosts()
@@ -227,9 +227,9 @@ const canonicalUrl = new URL(`/blog/${post.id}/`, Astro.site).toString();
           </Link>
           to support this project and help it grow. Your support means the world!
         </div>
-        <div class="mt-4 flex items-center gap-2 justify-center">
+        <!-- <div class="mt-4 flex items-center gap-2 justify-center">
           <LikePost post={post} />
-        </div>        
+        </div>         -->
       </div>
     </aside>
 
