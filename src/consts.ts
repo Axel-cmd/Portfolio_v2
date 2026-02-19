@@ -119,6 +119,14 @@ export const experiences: Experience[] = [
     dateStart: 'Oct 2024',
     dateEnd: 'Present',
     logo: '/static/alcea_assa_abloy_logo.jpg',
+    description: "As part of my role, I design and develop innovative solutions for connected security systems and building management technologies. These projects contribute to a continuous improvement approach focused on innovation, system reliability, and user experience.",
+    tasks: [
+      "Continuously enhancing the real-time web-based editor and supervisor, dedicated to the creation of building management solutions, integrating access control, intrusion detection, and video surveillance.",
+      "Designing a web-based data curve visualization component, enabling real-time monitoring or access to archived data from equipment connected to Alcea systems.",
+      "Continuously enhancing the REST API to improve interoperability and backend performance.",
+      "Developing a natural language abstraction server that helps users understand and interpret field events without requiring specific technical knowledge.",
+      "Took over a lesser-known part of the codebase using Bison and Flex for lexer and parser generation, aimed at developing a domain-specific language."
+    ]
   },
   {
     jobTitle: 'R&D Engineer, Apprenticeship',
@@ -126,6 +134,11 @@ export const experiences: Experience[] = [
     dateStart: 'Sept 2021',
     dateEnd: 'Sept 2024',
     logo: '/static/alcea_assa_abloy_logo.jpg',
+    description: "As part of my role, I resumed the proof of concept developed during my internship to create the application using modern technologies.",
+    tasks: [
+      "Developing a real-time web-based editor and supervisor, dedicated to the creation of building management solutions, integrating access control, intrusion detection, and video surveillance.",
+      "Integrate my development into the existing codebase, ensuring compatibility and seamless integration with the existing system."
+    ]
   },
   {
     jobTitle: 'R&D Engineer, Internship',
@@ -133,6 +146,11 @@ export const experiences: Experience[] = [
     dateStart: 'Jun 2021',
     dateEnd: 'Sept 2021',
     logo: '/static/alcea_assa_abloy_logo.jpg',
+    tasks: [
+      'Study and development of proof of concept for the animation in real time of graphic synoptic, dedicated to the management of access control and intrusion detection. Application developed in full web.',
+      'Use of the Babylon.js JavaScript library, which allows the creation of 3D application based on WebGL.',
+      'Connection to a Web socket that allows sending data to the application to animate 3D objects in real time.'
+    ]
   },
   {
     jobTitle: 'Order Picker',
@@ -140,5 +158,9 @@ export const experiences: Experience[] = [
     dateStart: 'Sep 2019',
     dateEnd: 'Sep 2019',
     logo: '/static/delanchy.webp',
+    tasks: [
+      'Unpacking and storage of pallets received in the morning.',
+      'Preparation of pallets to be sent to the recipients.',
+    ]
   }
 ]

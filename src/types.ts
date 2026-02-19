@@ -23,4 +23,6 @@ export type Experience = {
   dateStart: string
   dateEnd: string
   logo: string
+  tasks: string[]
+  description?: string
 }
