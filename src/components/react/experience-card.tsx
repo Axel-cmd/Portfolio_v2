@@ -23,18 +23,20 @@ const ExperienceCardJSX = ({ experience }: { experience: Experience }) => {
                     {experience.description}
                 </div>
             )}
-            <ul className="list-disc px-5 mt-6 text-muted-foreground text-sm space-y-2">
-                {experience.tasks.map((task, index) => (
-                    <li key={index}>{task}</li>
-                ))}
-            </ul>
-            {/* { experience.skills && (
-                <div className="mt-6 text-muted-foreground text-sm">
+            { experience.tasks && (
+                <ul className="list-disc px-5 mt-6 text-muted-foreground text-sm space-y-2">
+                    {experience.tasks.map((task, index) => (
+                        <li key={index}>{task}</li>
+                    ))}
+                </ul>
+            )}
+            { experience.skills && (
+                <div className="mt-6 text-muted-foreground text-sm w-full flex flex-wrap gap-1">
                     {experience.skills.map((skill, index) => (
                         <span className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary font-medium" key={index}>{skill}</span>
                     ))}
                 </div>
-            )} */}
+            )}
         </div>
     )
 }

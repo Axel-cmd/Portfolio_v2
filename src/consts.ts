@@ -128,7 +128,7 @@ export const experiences: Experience[] = [
       "Took over a lesser-known part of the codebase using Bison and Flex for lexer and parser generation, aimed at developing a domain-specific language."
     ],
     skills: [
-      "Angular", "TypeScript", "REST API", "WebSockets", "Bison", "Flex", "Domain-specific language", "WebGL", "Babylon.js", "C#", "Git", "GitLab", "SVN", "Jira"
+      "Angular", "TypeScript", "REST API", "WebSockets", "Bison & Flex", "Domain-specific language", "WebGL", "Babylon.js", "C#", "Git", "GitLab", "SVN", "Jira", "Chart.js"
     ]
   },
   {
@@ -141,6 +141,9 @@ export const experiences: Experience[] = [
     tasks: [
       "Developing a real-time web-based editor and supervisor, dedicated to the creation of building management solutions, integrating access control, intrusion detection, and video surveillance.",
       "Integrate my development into the existing codebase, ensuring compatibility and seamless integration with the existing system."
+    ],
+    skills: [
+      "Angular", "TypeScript", "REST API", "WebSockets", "WebGL", "Babylon.js", "C#", "SVN"
     ]
   },
   {
@@ -153,6 +156,9 @@ export const experiences: Experience[] = [
       'Study and development of proof of concept for the animation in real time of graphic synoptic, dedicated to the management of access control and intrusion detection. Application developed in full web.',
       'Use of the Babylon.js JavaScript library, which allows the creation of 3D application based on WebGL.',
       'Connection to a Web socket that allows sending data to the application to animate 3D objects in real time.'
+    ],
+    skills: [
+      "JavaScript", "WebSockets", "Babylon.js", "VS Code"
     ]
   },
   {
@@ -165,5 +171,13 @@ export const experiences: Experience[] = [
       'Unpacking and storage of pallets received in the morning.',
       'Preparation of pallets to be sent to the recipients.',
     ]
+  },
+  {
+    jobTitle: 'Immersion Internship',
+    company: 'French Authority for Nuclear Safety and Radiation Protection - ASNR',
+    dateStart: 'Oct 2015',
+    dateEnd: '1 week',
+    logo: '/static/ASNR.jpg',
+    description: "Immersion internship of 1 week during my 4th year at the middle school.",
   }
 ]
