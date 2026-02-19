@@ -126,6 +126,9 @@ export const experiences: Experience[] = [
       "Continuously enhancing the REST API to improve interoperability and backend performance.",
       "Developing a natural language abstraction server that helps users understand and interpret field events without requiring specific technical knowledge.",
       "Took over a lesser-known part of the codebase using Bison and Flex for lexer and parser generation, aimed at developing a domain-specific language."
+    ],
+    skills: [
+      "Angular", "TypeScript", "REST API", "WebSockets", "Bison", "Flex", "Domain-specific language", "WebGL", "Babylon.js", "C#", "Git", "GitLab", "SVN", "Jira"
     ]
   },
   {
