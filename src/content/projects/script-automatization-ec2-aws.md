@@ -4,7 +4,8 @@ description: 'Python script that automates the creation of an EC2 instance on AW
 tags: ['python', 'aws', 'ec2', 'boto3', 'devops']
 image: '../../../public/static/aws.png'
 link: 'https://github.com/Axel-cmd/ScriptAutomatizationEc2Aws'
-startDate: '2023-04-20'
+startDate: '2022-04-20'
+endDate: '2022-06-25'
 ---
 # ScriptAutomatizationEc2Aws
 

@@ -2,9 +2,10 @@
 name: 'hexaNetFrameDecoder'
 description: 'A python script to decode an hexadecimal network frame, use to print separately parts of the frame, and decode frame data from hexa to ascii. Useful for network analysis, debugging and protocol reverse-engineering.'
 tags: ['python', 'network', 'cli', 'automation']
-image: '../../../public/static/logo.svg'
+image: '../../../public/static/hexa-frame.jpg'
 link: 'https://github.com/Axel-cmd/hexaNetFrameDecoder'
 startDate: '2023-04-16'
+endDate: '2023-04-16'
 ---
 # hexaNetFrameDecoder
 
@@ -15,7 +16,7 @@ startDate: '2023-04-16'
 **hexaNetFrameDecoder** is a Python tool designed to decode and interpret hexadecimal network frames/data.
 It helps convert raw hex-formatted frames into a readable, parsed structure — useful for network analysis, debugging, protocol reverse-engineering, security tests or embedded systems debugging.
 
-This project aims to allow users and developers to quickly transform raw hex dumps into meaningful data without manual parsing.
+This project aims to allow users and developers to quickly transfxorm raw hex dumps into meaningful data without manual parsing.
 
 ---
 

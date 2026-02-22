@@ -5,6 +5,7 @@ tags: ['html', 'css', 'typescript', 'vite']
 image: '../../../public/static/archived-portfolio.png'
 link: 'https://axelminart.com'
 startDate: '2024-01-01'
+endDate: '2025-01-01'
 ---
 # Portfolio
 

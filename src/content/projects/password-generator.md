@@ -2,9 +2,10 @@
 name: 'password-generator'
 description: 'A fast and customizable Python tool to generate secure, high-entropy passwords from the command line. Generate customizable passwords with various character sets and automatic clipboard copy.'
 tags: ['python', 'cli', 'security']
-image: '../../../public/static/logo.svg'
+image: '../../../public/static/password-generator.png'
 link: 'https://github.com/Axel-cmd/password-generator'
 startDate: '2023-04-20'
+endDate: '2026-01-08'
 ---
 # password-generator
 
