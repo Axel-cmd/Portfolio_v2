@@ -1,0 +1,174 @@
+---
+title: "GitHub CLI"
+description: "The Complete Guide to Using GitHub from Your Terminal"
+date: 2026-02-23
+tags:
+  - "Git"
+  - "GitHub"
+  - "cli"
+  - "linux"
+authors:
+  - "Axel Minart"
+slug: "github-cli"
+updatedDate: 2026-02-23
+
+---
+
+# GitHub CLI: The Complete Guide to Using GitHub from Your Terminal
+
+In modern software development, we spend a lot of time on GitHub: creating repositories, managing pull requests, reviewing code, handling issues…
+
+But what if you could do all of that **without opening your browser**?
+
+In this article, we’ll explore **GitHub CLI**, the official tool that lets you interact with GitHub directly from your terminal.
+
+---
+
+## 🚀 What is GitHub CLI?
+
+[GitHub CLI](https://cli.github.com/) (command: `gh`) is GitHub’s official command-line tool.
+
+It allows you to:
+
+- Create and manage repositories  
+- Open and manage Pull Requests  
+- Create and assign Issues  
+- Trigger GitHub Actions workflows  
+- Automate development tasks  
+
+👉 In short: **you control GitHub without leaving your terminal.**
+
+---
+
+## 💻 Installation
+
+### Windows 
+
+```bash
+winget install --id GitHub.cli
+```
+
+### linux
+
+The command can depend on your linux distribution
+
+```bash
+sudo apt install gh
+```
+
+
+## 🔐 Authentication
+
+Once installed, run:
+
+```bash
+gh auth login
+```
+
+You’ll be guided to:
+
+- Choose GitHub.com or GitHub Enterprise
+
+- Authenticate via browser or token
+
+- Select your preferred protocol (HTTPS or SSH)
+
+After this step, your terminal is connected to your GitHub account.
+
+## 📁 Essential Commands
+
+### 1️⃣ Create a Repository
+
+```bash
+gh repo create my-project
+```
+
+Useful options:
+
+```bash
+gh repo create my-project --public --source=. --remote=origin --push
+```
+
+This will:
+
+- Create the repository on GitHub
+
+- Link it to your local folder
+
+- Automatically push your code
+
+### 2️⃣ Clone a Repository
+
+```bash
+gh repo clone username/repository
+``` 
+
+### 3️⃣ Create a Pull Request
+
+```bash
+gh pr create
+```
+
+The interactive assistant will ask for:
+
+- The base branch
+- The title
+- The description
+
+You can also automate it:
+
+```bash
+gh pr create --title "New Feature" --body "Adds the new feature implementation"
+```
+
+### 4️⃣ List Pull Requests
+
+```bash
+gh pr list
+```
+
+### 5️⃣ Create an Issue
+
+```bash
+gh issue create
+```
+
+You can also specify details directly:
+
+```bash
+gh issue create --title "Bug in login flow" --body "Error occurs when submitting the form"
+```
+
+## 🔄 Practical Workflow Example
+
+Here’s a simple real-world workflow using GitHub CLI:
+
+- Initialize your local project
+
+- Create a repository:
+
+```bash
+gh repo create my-app --public --source=. --push
+```
+
+- Create a new branch and implement a feature
+
+- Push your branch:
+
+```bash
+git push origin feature-branch
+```
+
+- Open a Pull Request:
+
+```bash
+gh pr create
+```
+
+- Merge the PR:
+
+```bash
+gh pr merge
+```
+
+All without opening GitHub in your browser.
