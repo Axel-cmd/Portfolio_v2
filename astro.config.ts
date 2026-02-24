@@ -46,8 +46,7 @@ function rehypeDemoteH1AndStripTitle() {
 }
 
 export default defineConfig({
-  site: 'https://axel-cmd.github.io',
-  base: '/Portfolio_v2',
+  site: 'https://axelminart.com',
   integrations: [expressiveCode({
     themes: ['catppuccin-latte', 'ayu-dark'],
     plugins: [pluginCollapsibleSections(), pluginLineNumbers()],
