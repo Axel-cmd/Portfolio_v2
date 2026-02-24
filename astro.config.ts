@@ -46,8 +46,8 @@ function rehypeDemoteH1AndStripTitle() {
 }
 
 export default defineConfig({
-  site: 'https://www.cojocarudavid.me',
-
+  site: 'https://axel-cmd.github.io',
+  base: '/Portfolio_v2',
   integrations: [expressiveCode({
     themes: ['catppuccin-latte', 'ayu-dark'],
     plugins: [pluginCollapsibleSections(), pluginLineNumbers()],
