@@ -1,0 +1,202 @@
+---
+title: "GitHub Pages: Custom Domains, Git Branches, and HTTPS"
+description: "Beginner-friendly: deploy static HTML on GitHub Pages from a branch, map branches to publishing, add a custom domain and HTTPS, and fix common DNS mistakes."
+date: 2026-03-29
+tags:
+  - "GitHub Pages"
+  - "Git"
+  - "DNS"
+  - "HTTPS"
+  - "self-hosting"
+  - "GitHub Actions"
+authors:
+  - "Axel Minart"
+slug: "self-host-github-pages-custom-domain"
+updatedDate: 2026-03-29
+---
+
+Publishing a **static website on GitHub Pages** is one of the simplest ways to put a project online: you keep files in Git, push to GitHub, and GitHub serves the site. This guide walks through the **default path for beginners**—publishing from a **branch**—then explains how **Git branches** relate to what gets published, how to use a **custom domain**, and how **HTTPS** fits into the picture.
+
+Official documentation is the source of truth for details that change over time (especially **DNS records**). Start from [About GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages) and keep that tab open while you work.
+
+---
+
+## What you will deploy
+
+By the end of the main path, you will:
+
+- Host a minimal **static HTML** site (for example `index.html` at the repo root or under `/docs`).
+- Turn on **GitHub Pages** using **Deploy from a branch**.
+- Understand which **branch and folder** GitHub Pages reads from.
+- Know where to go next for a **custom domain**, **DNS**, and **HTTPS**.
+
+---
+
+## Prerequisites
+
+- A **GitHub account** and a **repository** you can push to.
+- **Git** installed locally (optional but helpful): you will `commit` and `push` changes.
+- A mental model of **branches**: a branch is a movable label pointing to a commit. `main` (or `master`) is usually where integrated work lives. For Pages, the important question is: **which branch and folder** GitHub is configured to publish—not how many feature branches you use for day-to-day work.
+
+- Basic vocabulary:
+  - **DNS** (Domain Name System): maps human-readable hostnames (for example `www.example.com`) to the infrastructure that serves your site. Your registrar or DNS host stores **DNS records** you configure.
+  - **HTTPS** / **TLS**: encrypts traffic between browsers and your site. GitHub Pages can provision certificates for both default `*.github.io` URLs and many custom domain setups.
+  - **SSL** is often used informally to mean the same family of technology as TLS.
+
+---
+
+## Publish a static site with “Deploy from a branch”
+
+GitHub Pages can publish from a **branch** you select in the repository settings. For a beginner tutorial, this is easier than starting from a custom workflow, because you see a direct link between **files on a branch** and **what is online**.
+
+High-level steps:
+
+1. Add a simple `index.html` to your repository (either at the **root** of the branch you will publish, or inside a **`/docs`** folder on that branch—see below).
+2. In the repo on GitHub: **Settings → Pages** (or **Build and deployment**).
+3. Under **Source**, choose **Deploy from a branch**.
+4. Select the **branch** (often `main`) and either the **root** (`/`) or the **`/docs`** folder.
+
+Minimal example at the repository root:
+
+```html
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>My GitHub Pages site</title>
+  </head>
+  <body>
+    <h1>Hello from GitHub Pages</h1>
+  </body>
+</html>
+```
+
+The exact UI labels may change slightly; if something looks different, follow [Configuring a publishing source for your GitHub Pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
+
+### Option A: site at the repository root (`/`)
+
+Put `index.html` at the top level of the branch you publish. When you choose **root** as the publishing folder, GitHub Pages serves those files.
+
+### Option B: site in the `/docs` folder
+
+Some projects keep documentation or a small site under **`docs/`**. You can publish **only** that folder by choosing **`/docs`** as the publishing folder for the selected branch. Your `index.html` would live at `docs/index.html`.
+
+### User/organization site vs project site
+
+GitHub Pages supports different URL shapes (for example a **user site** at `username.github.io` versus a **project site** at `username.github.io/repository/`). The path your static assets use (relative links, asset URLs) depends on that model. See [About GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages) for the distinction—getting this wrong is a common source of “broken links” that look fine locally.
+
+---
+
+## When you need a build step (GitHub Actions)
+
+If you use a static site generator (for example **Astro**, Vite, or another Node-based tool), you usually run a **build** that outputs HTML into a folder such as **`dist/`**. GitHub Pages does not magically run that build for arbitrary frameworks unless you set up automation.
+
+The usual pattern is **GitHub Actions**: the workflow builds the site, then publishes the **built output** to GitHub Pages (for example using a dedicated branch or the **GitHub Actions** publishing source). See [Configuring a publishing source](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#publishing-with-a-custom-github-actions-workflow) and avoid turning on **two** conflicting publishing methods at once without a clear plan—otherwise you can get confusing results or overwrite files you care about (including `CNAME`—see below).
+
+**Jekyll (optional note):** GitHub Pages has a long history with **Jekyll**. If you publish Markdown and use Jekyll features, GitHub may run a Jekyll build depending on your setup. This guide focuses on **plain static HTML** first so the mental model stays simple; treat Jekyll as its own topic in the official docs if you need it.
+
+---
+
+## How Git branches relate to GitHub Pages
+
+Think of GitHub Pages as “serve **whatever static files** end up in the publishing location you configured.” Those files usually come from a **specific branch** (and path) you chose in settings.
+
+### `main` as the publishing branch
+
+Many tutorials use **`main`** as both the development branch and the branch GitHub Pages publishes from (either `/` or `/docs`). That is simple: you merge to `main`, push, and the site updates after the Pages build finishes.
+
+### Dedicated `gh-pages` or another branch
+
+Some workflows publish built output to a branch such as **`gh-pages`**. Conceptually, **`main`** holds source code, while **`gh-pages`** holds only the generated HTML. That separation is powerful, but it is easier to misunderstand which branch is “live.” Use `git branch -a` locally to confirm what exists on the remote.
+
+If you create a throwaway branch to experiment (without changing your Pages source yet), you might use:
+
+```bash
+git checkout -b experiment/pages-layout
+# make changes, commit, push
+```
+
+Only the branch selected under **Pages → Build and deployment** affects what visitors see.
+
+### Common mistakes
+
+- **Wrong branch selected** in Pages settings: you push to `main`, but Pages still publishes an old branch.
+- **Wrong folder** (`/` vs `/docs`): your `index.html` is not where GitHub Pages is looking—classic **404**.
+- **Two publishing mechanisms** (for example branch publishing **and** a workflow that deploys elsewhere) without coordination: double publishes, stale content, or overwritten files.
+- **Missing build output**: you enabled a workflow but the artifact never lands where Pages expects it.
+
+---
+
+## Custom domains and the `CNAME` file
+
+You can serve a GitHub Pages site from a domain you control. GitHub documents the moving parts under [About custom domains and GitHub Pages](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages) and [Managing a custom domain](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site).
+
+For many setups, GitHub will expect a **`CNAME`** file in the published content when you use a **subdomain** style hostname (for example `www.example.com`). If an automated build publishes your site, make sure your pipeline **does not delete** the `CNAME` file unless your workflow recreates it every time.
+
+**Overwrite risk:** a deploy step that wipes the publish directory (for example a clean copy of `dist/`) can remove `CNAME` unless you copy it into the build output or generate it in the workflow. Branch-only publishing from hand-edited HTML is less surprising here; automation requires discipline.
+
+---
+
+## DNS: apex vs subdomain
+
+- **Apex** (sometimes called “root” or “naked” domain): often `example.com` without a subdomain prefix.
+- **Subdomain**: for example `www.example.com` or `blog.example.com`.
+
+Whether you use **`A`/`AAAA`** records, **`CNAME`** records, or GitHub’s recommended combination depends on your case. **Do not copy IP addresses from random blog posts**—follow [Verifying your custom domain for GitHub Pages](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/verifying-your-custom-domain-for-github-pages) and confirm the current values when you configure DNS.
+
+DNS changes can take time to propagate (minutes to hours, sometimes longer). If something “half works,” wait and re-test.
+
+---
+
+## HTTPS and “Enforce HTTPS”
+
+GitHub Pages can provide HTTPS for your site. In repository settings, you may see an **Enforce HTTPS** option when a certificate is available.
+
+If **HTTPS** is unavailable or a certificate never finishes provisioning, the cause is often **DNS**: the domain does not stably point to GitHub Pages yet. **HTTPS may stay unavailable while DNS is wrong or still propagating**—that is expected until GitHub can validate control of the hostname. Fix DNS first, wait for stable resolution, then revisit HTTPS. For problems specific to domains, use [Troubleshooting custom domains](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/troubleshooting-custom-domains-and-github-pages).
+
+---
+
+## Troubleshooting
+
+- **404 / “There isn’t a GitHub Pages site here”**: confirm the Pages **source** (branch + folder), that `index.html` exists at the published path, and that the build (if any) completed.
+- **Repository visibility**: private repositories have GitHub Pages constraints depending on your plan. Check GitHub’s current rules in [About GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages).
+- **Domain does not resolve**: verify DNS records at your DNS provider; use standard DNS lookup tools; remember propagation delays.
+- **Redirect loops**: often caused by conflicting **HTTP/HTTPS** or **www** rules between your DNS, registrar, and GitHub settings—change one thing at a time and re-test.
+- **Certificate not ready** / **HTTPS grayed out**: wait for stable DNS; remove typos in hostname configuration; retry after propagation—do not expect an instant certificate while DNS still flips between old and new targets.
+
+---
+
+## Handy Git commands (examples)
+
+These are typical when your published site is literally the files on a branch:
+
+```bash
+git checkout main
+git pull
+# edit index.html (or docs/index.html)
+git add .
+git commit -m "Update site"
+git push origin main
+```
+
+To inspect what branches exist (local and remote):
+
+```bash
+git branch -a
+```
+
+If you maintain a dedicated publishing branch, pushes target that branch instead—but only do this if that matches how your Pages source is configured.
+
+---
+
+## Pre-publish checklist
+
+- [ ] Frontmatter complete (`title`, `description`, `date`, `tags`, `authors`, `slug`, `updatedDate`).
+- [ ] `description` ~150–160 characters, English, no obvious typos.
+- [ ] A beginner can follow the main path end-to-end.
+- [ ] Branch section: one clear publishing source + common failure modes covered.
+- [ ] DNS section: apex vs subdomain clarified; link to GitHub docs for current record values.
+- [ ] HTTPS section: delays and DNS dependency explained.
+- [ ] No secrets, tokens, or sensitive real domains in examples.
+- [ ] External links to official documentation verified (no 404).
+- [ ] Local Astro build (`npm run build`) passes for the new content entry.
